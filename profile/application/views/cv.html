@@ -217,7 +217,7 @@
                 <a onclick="About()" href="#"><i class="bi bi-person"></i> About</a>
                 <a href="#"><i class="bi bi-briefcase"></i> Experience</a>
                 <a href="#"><i class="bi bi-box-fill"></i> Work</a>
-                <a href="#"><i class="bi bi-chat-right-fill"> Contact</i></a>
+                <a onclick="contact()" href="#"><i class="bi bi-chat-right-fill"> Contact</i></a>
                 <a href="">a</a>
                 <a href="">b</a>
                 <a href="">c</a>
@@ -305,6 +305,12 @@
             hideallview();
             var about = document.getElementById('view2');
             about.style.display = 'block';
+        }
+
+        function contact() {
+            hideallview();
+            var kontak = document.getElementById('view4');
+            konntak.style.display = 'block';
         }
     </script>
 </body>
