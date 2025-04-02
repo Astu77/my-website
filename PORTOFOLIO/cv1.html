@@ -552,8 +552,14 @@
             .content {
                 position: relative;
                 display: none;
-                transition: all 0.3s ease
+                transition: opacity 0.5s ease, transform 0.5s ease;
             }
+
+            .content.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
 
             .view {
                 color: aliceblue;
@@ -1180,7 +1186,8 @@
 
         function hideallview() {
             document.querySelectorAll('.content').forEach(content => {
-                content.style.display = 'none';
+                content.classList.remove('active');
+                setTimeout(() => { content.style.display = 'none'; }, 500);
             });
 
 
@@ -1191,12 +1198,13 @@
             hideallview();
             var home = document.getElementById('view1');
             home.style.display = 'block';
+            setTimeout(() => { home.classList.add('active'); }, 10);
 
             var heading = home.querySelector('h4');
 
             if (heading) {
                 heading.classList.remove('block');
-                void heading.offsetwidth;
+                void heading.offsetWidth;
                 heading.classList.add('block');
             }
         }
@@ -1204,18 +1212,21 @@
             hideallview();
             var about = document.getElementById('view2');
             about.style.display = 'block';
+            setTimeout(() => { home.classList.add('active'); }, 10);
         }
 
         function Experience() {
             hideallview();
             var exper = document.getElementById('view3');
             exper.style.display = 'block';
+            setTimeout(() => { home.classList.add('active'); }, 10);
         }
 
         function contact() {
             hideallview();
             var kontak = document.getElementById('view4');
             kontak.style.display = 'block';
+            setTimeout(() => { home.classList.add('active'); }, 10);
         }
 
         function Work() {
