@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+8<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -562,7 +562,7 @@
                 position: relative;
                 opacity: 1;
                 transform: translateX(0);
-}
+            }
 
             .view {
                 color: aliceblue;
@@ -1206,7 +1206,7 @@
 
 
         function showView(viewId) {
-    hideAllView();
+    hideallview();
 
     var view = document.getElementById(viewId);
     view.style.display = 'block';
@@ -1216,10 +1216,20 @@
     }, 10); 
 }
 
-     
+    function Home() {
+    showView('view1');
+}
+
+function About() {
+    showView('view2');  // Perbaiki agar "About" menampilkan view2
+}
+
+function Experience() {
+    showView('view3');  // Perbaiki agar "Experience" menampilkan view3
+} 
 
 
-        function Home() {
+        /*function Home() {
             hideallview();
             var home = document.getElementById('view1');
             home.style.display = 'block';
@@ -1258,7 +1268,7 @@
             hideallview();
             var work = document.getElementById('view5');
             work.style.display = 'block';
-        }
+        }*/
 
         function inistSilder() {
             let currentSlide = 0;
