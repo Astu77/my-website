@@ -1185,21 +1185,50 @@
 
         window.addEventListener('DOMContentLoaded', function () {
             adjustMenu();
-            Home();
+            showView('view1');
        });
         window.addEventListener('resize', adjustMenu);
 
         function hideallview() {
             document.querySelectorAll('.content').forEach(content => {
                 content.classList.remove('active');
-                setTimeout(() => { content.style.display = 'none'; }, 500);
-            });
+                
+                setTimeout(() => {
+            if (!content.classList.contains('active')) {
+                content.style.display = 'none';
+            }
+        }, 500); 
+    });
 
 
         }
 
 
-        function Home() {
+        function showView(viewId) {
+    hideAllView();
+
+    var view = document.getElementById(viewId);
+    view.style.display = 'block';
+
+    setTimeout(() => {
+        view.classList.add('active');
+    }, 10); 
+}
+
+     function Home() {
+    showView('view1');
+}
+
+     function About() {
+    showView('view2');
+}
+
+    function Experience() {
+        showView('view3') ;
+    }
+
+
+        /*function Home() {
             hideallview();
             var home = document.getElementById('view1');
             home.style.display = 'block';
@@ -1238,7 +1267,7 @@
             hideallview();
             var work = document.getElementById('view5');
             work.style.display = 'block';
-        }
+        }*/
 
         function inistSilder() {
             let currentSlide = 0;
