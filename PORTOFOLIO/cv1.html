@@ -550,7 +550,7 @@
             }
 
             .content {
-                position: relative;
+                
                 display: none;
                 opacity: 0;
                 transform: translateX(50px);
@@ -558,9 +558,9 @@
             }
 
             .content.active {
-    display: block;
-    opacity: 1;
-    transform: translateX(0);
+                display: block;
+                opacity: 1;
+                transform: translateX(0);
 }
 
             .view {
@@ -1183,7 +1183,10 @@
             });
         });
 
-        window.addEventListener('DOMContentLoaded', adjustMenu);
+        window.addEventListener('DOMContentLoaded', function () {
+            adjustMenu();
+            Home();
+       });
         window.addEventListener('resize', adjustMenu);
 
         function hideallview() {
