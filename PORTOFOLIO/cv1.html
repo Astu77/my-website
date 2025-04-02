@@ -1,4 +1,4 @@
-8<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -563,6 +563,11 @@
                 opacity: 1;
                 transform: translateX(0);
             }
+
+            .content.fade-out {  
+                opacity: 0;
+                transform: translateX(-50px); /* Geser ke kiri saat keluar */
+}
 
             .view {
                 color: aliceblue;
@@ -1192,11 +1197,16 @@
 
         function hideallview() {
             document.querySelectorAll('.content').forEach(content => {
+            if    (content.classList.remove('active')){
+                  (content.classList.add('fade-out');
+            }
+
                 content.classList.remove('active');
                 
                 setTimeout(() => {
             if (!content.classList.contains('active')) {
                 content.style.display = 'none';
+                content.classList.remove('fade-out');
             }
         }, 500); 
     });
