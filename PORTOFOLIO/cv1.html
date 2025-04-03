@@ -575,7 +575,7 @@
 
             .view {
                 color: aliceblue;
-                transition: transform 0.5s ease-in-out;
+                transition: transform 0.5s ease;
             }
 
             .conhome {
@@ -1199,35 +1199,37 @@
        });
         window.addEventListener('resize', adjustMenu);
 
-        function hideallview() {
-            document.querySelectorAll('.content').forEach(content => {
-            if    (content.classList.remove('active')){
-                  content.classList.add('fade-out');
-            }
+        function hideallview(callback) {
+            let activeContent = document.querySelector('.content.active');
 
-                
-                
+            if (activeCintent) {
+                activeContent.classlist.add('fade-out');
+            
+
                 setTimeout(() => {
-            if (!content.classList.contains('active')) {
-                content.style.display = 'none';
-                content.classList.remove('fade-out');
+                  activeContent.classList.remove('active', 'fade-out');
+                    activeContent.style.display = 'none';
+                    if (callback) callback();
+        }, 600); 
+          
+            }else {
+                if (callback) callback(); 
+                
             }
-        }, 500); 
-    });
-
 
         }
 
 
-        function showView(viewId) {
-    hideallview();
-
+    function showView(viewId) {
     var view = document.getElementById(viewId);
-    view.style.display = 'block';
+    
 
-    setTimeout(() => {
-        view.classList.add('active');
-    }, 10); 
+    hideallview(() => {
+        view.style.display = 'block';
+        requestAnimationFrame(() => {
+            view.cllasList.add('active');
+        });
+    }); 
 }
 
     function Home() {
