@@ -1202,10 +1202,10 @@
         function hideallview() {
             document.querySelectorAll('.content').forEach(content => {
             if    (content.classList.remove('active')){
-                  (content.classList.add('fade-out');
+                  content.classList.add('fade-out');
             }
 
-                content.classList.remove('active');
+                
                 
                 setTimeout(() => {
             if (!content.classList.contains('active')) {
@@ -1235,11 +1235,11 @@
 }
 
 function About() {
-    showView('view2');  // Perbaiki agar "About" menampilkan view2
+    showView('view2');
 }
 
 function Experience() {
-    showView('view3');  // Perbaiki agar "Experience" menampilkan view3
+    showView('view3');
 } 
 
 
