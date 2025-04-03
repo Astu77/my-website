@@ -556,18 +556,22 @@
                 transform: translateX(50px);
                 transition: opacity 0.5s ease, transform 0.5s ease;
                 width: 100℅;
+                top: 0;
+                left: 0;
             }
 
             .content.active {
                 position: relative;
                 opacity: 1;
                 transform: translateX(0);
+                z-index: 10;
             }
 
             .content.fade-out {  
                 opacity: 0;
-                transform: translateX(-50px); /* Geser ke kiri saat keluar */
-}
+                transform: translateX(-50px);
+                z-index: 5;
+            }
 
             .view {
                 color: aliceblue;
