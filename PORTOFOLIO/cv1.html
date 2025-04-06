@@ -1197,12 +1197,12 @@
             adjustMenu();
             showView('view1');
        });
-        window.addEventListener('resize', 'adjustMenu');
+        window.addEventListener('resize', adjustMenu);
 
         function hideallview(callback) {
             let activeContent = document.querySelector('.content.active');
 
-            if (activeCintent) {
+            if (activeContent) {
                 activeContent.classlist.add('fade-out');
             
 
@@ -1227,7 +1227,7 @@
     hideallview(() => {
         view.style.display = 'block';
         requestAnimationFrame(() => {
-            view.cllasList.add('active');
+            view.classList.add('active');
         });
     }); 
 }
