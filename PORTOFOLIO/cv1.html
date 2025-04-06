@@ -1193,63 +1193,26 @@
             });
         });
 
-        window.addEventListener('DOMContentLoaded', function () {
-            adjustMenu();
-            showView('view1');
-       });
+        window.addEventListener('DOMContentLoaded', adjustMenu);
         window.addEventListener('resize', adjustMenu);
 
-        function hideallview(callback) {
-            let activeContent = document.querySelector('.content.active');
+        function hideallview() {
+            document.querySelectorAll('.content').forEach(content => {
+                content.classList.remove('active');
+                content.style.transform = 'translateX(100%)'; 
+                content.style.opacity = '0';
+            });
 
-            if (activeContent) {
-                activeContent.classlist.add('fade-out');
-            
-
-                setTimeout(() => {
-                  activeContent.classList.remove('active', 'fade-out');
-                    activeContent.style.display = 'none';
-                    if (callback) callback();
-        }, 600); 
-          
-            }else {
-                if (callback) callback(); 
-                
-            }
 
         }
 
 
-    function showView(viewId) {
-    var view = document.getElementById(viewId);
-    
-
-    hideallview(() => {
-        view.style.display = 'block';
-        requestAnimationFrame(() => {
-            view.classList.add('active');
-        });
-    }); 
-}
-
-    function Home() {
-    showView('view1');
-}
-
-function About() {
-    showView('view2');
-}
-
-function Experience() {
-    showView('view3');
-} 
-
-
-        /*function Home() {
+        function Home() {
             hideallview();
             var home = document.getElementById('view1');
-            home.style.display = 'block';
-            setTimeout(() => { home.classList.add('active'); }, 10);
+            home.classList.add('active');
+            home.style.transform = 'translateX(0)';
+            home.style.opacity = '1'; 
 
             var heading = home.querySelector('h4');
 
@@ -1262,18 +1225,20 @@ function Experience() {
         function About() {
             hideallview();
             var about = document.getElementById('view2');
-            about.style.display = 'block';
-            setTimeout(() => { home.classList.add('active'); }, 10);
+            about.classList.add('active');
+            about.style.transform = 'translateX(0)';
+            about.style.opacity = '1';
         }
 
         function Experience() {
             hideallview();
             var exper = document.getElementById('view3');
-            exper.style.display = 'block';
-            setTimeout(() => { home.classList.add('active'); }, 10);
+            exper.classList.add('active');
+            exper.style.transform = 'translateX(0)';
+            exper.style.opacity = '1';
         }
 
-        function contact() {
+       /* function contact() {
             hideallview();
             var kontak = document.getElementById('view4');
             kontak.style.display = 'block';
