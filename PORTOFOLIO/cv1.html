@@ -98,6 +98,13 @@
                 pointer-events: all;
             }
 
+            .content-wrapper {
+                position: relative;
+                width: 100%;
+                height: auto;
+                overflow: hidden; 
+            }
+
             .content {
                 
                 position: absolute;
@@ -567,6 +574,13 @@
                 pointer-events: all;
             }
 
+            .content-wrapper {
+                position: relative;
+                width: 100%;
+                height: auto;
+                overflow: hidden; 
+            }
+
             .content {
                 
                 position: absolute;
@@ -1009,6 +1023,7 @@
 
             </div>
 
+            <div class="content-wraper">
             <div class="col-md-9 content" id="view1">
                 <br><br>
             <div class="vihome">
@@ -1148,6 +1163,7 @@
             </div>
             <br>
             </div>
+            </div>
 
            
 
@@ -1213,6 +1229,10 @@
 
         window.addEventListener('DOMContentLoaded', adjustMenu);
         window.addEventListener('resize', adjustMenu);
+        window.addEventlistener('DOMContentloaded', function() {
+                adjustMenu();
+                Home();
+        });
 
         function hideallview() {
             document.querySelectorAll('.content').forEach(content => {
