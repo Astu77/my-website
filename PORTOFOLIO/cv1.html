@@ -99,9 +99,21 @@
             }
 
             .content {
+                
+                position: absolute;
+                opacity: 0;
+                transform: translateX(100℅);
+                transition: opacity 0.6s ease, transform 0.6s ease-in-out;
+                width: 100℅;
+                top: 0;
+                left: 0;
+            }
+
+            .content.active {
                 position: relative;
-                display: none;
-                transition: opacity 0.3s ease-in-out;
+                opacity: 1;
+                transform: translateX(0);
+                z-index: 10;
             }
 
             #views {
