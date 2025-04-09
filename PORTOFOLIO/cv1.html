@@ -577,15 +577,16 @@
              .content-wraper {
                 position: relative;
                 width: 100%;
-                min-height: 100vh; 
-                overflow: hidden;
+                padding: 5px;
+                min-height: auto; 
+                overflow-x: hidden;
             }
 
             .content {
                 
-                position: absolute;
+                position: relative;
                 opacity: 0;
-                transform: translateX(100%);
+                transform: none;
                 transition: opacity 0.6s ease, transform 0.6s ease-in-out;
                 width: 100%;
                 top: 0;
@@ -593,10 +594,8 @@
             }
 
             .content.active {
-                position: absolute;
+                position: relative;
                 opacity: 1;
-                transform: translateX(0);
-                z-index: 10;
             }
 
             .content.fade-out {  
@@ -604,7 +603,6 @@
                 transform: translateX(-100℅);
                 z-index: 5;
             }
-
             .view {
                 color: aliceblue;
                 transition: transform 0.5s ease;
